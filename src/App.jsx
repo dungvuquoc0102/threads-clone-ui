@@ -4,7 +4,7 @@ import { ROUTES } from "@/routes";
 
 function App() {
   return (
-    <Router basename="//threads-clone-ui">
+    <Router>
       <Routes>
         {ROUTES.map((rou, index) => {
           const Layout = rou.layout;

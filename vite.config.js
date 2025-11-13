@@ -14,5 +14,4 @@ export default defineConfig({
       "@pages": "/src/pages",
     },
   },
-  base: "/threads-clone-ui",
 });
