@@ -2,23 +2,21 @@ import { PATHS } from "@/configs/paths.js";
 import { LAYOUTS } from "@/configs/layouts.js";
 
 import Home from "@/pages/HomePage";
-import Search from "@pages/Search";
-import Create from "@components/Create";
+import Search from "@/pages/Search";
 import Activity from "@/pages/Activity";
-import NotFound from "@pages/NotFound";
-import Profile from "@pages/Profile";
+import NotFound from "@/pages/NotFound";
+import Profile from "@/pages/Profile";
 import {
   Heart as HeartIcon,
   House as HouseIcon,
-  Plus as PlusIcon,
   User as UserIcon,
 } from "lucide-react";
 import { Search as SearchIcon } from "lucide-react";
 import PostDetail from "@/pages/PostDetailPage";
 import UserProfile from "@/pages/ProfilePage";
-import Following from "./pages/Following/Following";
-import GhostPosts from "./pages/GhostPosts";
-import ForYou from "./pages/ForYou/ForYou";
+import Following from "@/pages/Following/Following";
+import GhostPosts from "@/pages/GhostPosts";
+import ForYou from "@/pages/ForYou/ForYou";
 
 export const ROUTES = [
   {
@@ -78,14 +76,6 @@ export const ROUTES = [
         element: Search,
         isShowInNav: true,
         icon: SearchIcon,
-        isFill: false,
-      },
-      {
-        path: null,
-        title: "Create",
-        element: Create,
-        isShowInNav: true,
-        icon: PlusIcon,
         isFill: false,
       },
       {

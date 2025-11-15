@@ -8,7 +8,7 @@ import {
   Send as SendIcon,
 } from "lucide-react";
 import { Card } from "@/components/ui/card";
-import ReplyModal from "../Modals/ReplyModal";
+import ReplyModal from "./Modals/ReplyModal";
 
 function CommentItem({ postId, userId, id, name, body }) {
   // const navigate = useNavigate();

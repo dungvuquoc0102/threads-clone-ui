@@ -62,8 +62,21 @@ Lộ trình được điều chỉnh để tập trung 75% thời gian cho việ
 
 Mục tiêu: Đưa dự án vào trạng thái sẵn sàng phát triển tính năng.
 
-- **Ngày 1:** Khởi tạo dự án (Vite/React/JS). Cài đặt và cấu hình **Tailwind CSS** và **Shadcn UI** cơ bản. Cài đặt **React i18next** (en/vi). Cài đặt **React Router**, xây dựng 3 Layouts (`Default`, `Auth`, `NoLayout`) và `NotFoundPage`. Triển khai UI thanh Navigation cơ bản.
-- **Ngày 2:** Cấu hình **Redux Toolkit/RTK Query** và **React Hook Form + Yup**.
+- **Ngày 1:** Khởi tạo dự án (Vite/React/JS), cấu trúc khung dự án, cài đặt và cấu hình **Tailwind CSS**, **Shadcn UI**, theme, **React i18next** (en/vi), **React Router**, **RTK Query**, **Axios**.
+  - Khởi tại dự án với Vite/React/JS: npm create vite@latest threads-clone-ui -- --template react
+  - Cấu trúc khung dự án, trong src có:
+    - configs: index.js, routes.js
+    - components:
+      - ui (của Shadcn):
+        (hệ form) button, spinner, input, select, textarea, radio group, progress, input otp, input group, field, date picker, card
+        (hệ hiện thị dữ liệu) button, spinner, card, tabs, skeleton, tooltip, toggle, scroll area, typography
+        (hệ hiện thị popup) sonner (toast), alert dialog, dialog, pop over, hover card, dropdown menu, drawer, context menu, command
+    - pages: NotFound.jsx, Login.jsx, Register.jsx, Forgot.jsx, Reset.jsx, Home.jsx, ForYou.jsx, PostDetail.jsx, Following.jsx, Activity.jsx, Search.jsx, Profile.jsx, Insight.jsx, Setting.jsx, Saved.jsx, GhostPost.jsx, EmbedThread.jsx
+    - layouts: DefaultLayout.jsx, AuthLayout.jsx, NoLayout.jsx
+    - assets: images/placeholder-avatar.png
+    - public: images/logo.png, images/favicon.png
+    - .env: BASE_URL
+- **Ngày 2:** Xây dựng 3 Layouts (`Default`, `Auth`, `NoLayout`) và `NotFoundPage`. Triển khai UI thanh Navigation cơ bản.
 
 ### 🎯 Giai đoạn 2: Phát Triển Tính Năng Lõi (12 Ngày)
 

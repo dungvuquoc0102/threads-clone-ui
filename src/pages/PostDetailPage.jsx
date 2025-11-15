@@ -1,4 +1,4 @@
-import CommentItem from "@/components/Comments/CommentItem";
+import CommentItem from "@/components/CommentItem";
 import PostItem from "@/components/Posts/PostItem";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";

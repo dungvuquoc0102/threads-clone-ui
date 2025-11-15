@@ -1,7 +1,6 @@
-import { ChartBarIncreasing } from "lucide-react";
-import { Button } from "../ui/button";
+import { Button } from "./ui/button";
 import { useNavigate } from "react-router";
-import { NavigationModal } from "../Modals/NavigationModal";
+import ModalNavigation from "./ModalNavigation";
 
 export default function Header() {
   const navigate = useNavigate();
@@ -29,7 +28,7 @@ export default function Header() {
         </svg>
       </div>
       <div className="hidden md:block">
-        <NavigationModal />
+        <ModalNavigation />
       </div>
       <div className="flex flex-1 items-center justify-end">
         <Button variant={"ghost"} className={"group size-12 cursor-pointer"}>

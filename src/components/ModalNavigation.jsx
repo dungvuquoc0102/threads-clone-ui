@@ -18,7 +18,7 @@ const dataMap = {
   following: "Following",
 };
 
-export function NavigationModal() {
+export default function ModalNavigation() {
   const [isRouting, setIsRouting] = useState("for_you");
   const navigate = useNavigate();
   const handleToRoute = (route) => {
