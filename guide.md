@@ -1,6 +1,6 @@
 Truy cập vào link: https://markdownlivepreview.com/ và dán nội dụng bên dưới để xem
 
-# 📜 Tài Liệu Dự Án: Lộ Trình Clone Frontend Threads.com
+# Tài Liệu Dự Án: Lộ Trình Clone Frontend Threads.com
 
 ## I. Mục Tiêu Dự Án
 
@@ -58,7 +58,7 @@ Dự án sử dụng 3 loại layout chính để quản lý các nhóm trang:
 
 Lộ trình được điều chỉnh để tập trung 75% thời gian cho việc phát triển tính năng (Giai đoạn 2 & 3).
 
-### 🎯 Giai đoạn 1: Thiết Lập & Cấu Trúc Cơ Bản (2 Ngày)
+### Giai đoạn 1: Thiết Lập & Cấu Trúc Cơ Bản (2 Ngày)
 
 Mục tiêu: Đưa dự án vào trạng thái sẵn sàng phát triển tính năng.
 
@@ -78,7 +78,7 @@ Mục tiêu: Đưa dự án vào trạng thái sẵn sàng phát triển tính n
     - .env: BASE_URL
 - **Ngày 2:** Xây dựng 3 Layouts (`Default`, `Auth`, `NoLayout`) và `NotFoundPage`. Triển khai UI thanh Navigation cơ bản.
 
-### 🎯 Giai đoạn 2: Phát Triển Tính Năng Lõi (12 Ngày)
+### Giai đoạn 2: Phát Triển Tính Năng Lõi (12 Ngày)
 
 Mục tiêu: Hoàn thành các tính năng cốt lõi nhất, đặc biệt là phần giao tiếp API và Trang chủ.
 
@@ -90,7 +90,7 @@ Mục tiêu: Hoàn thành các tính năng cốt lõi nhất, đặc biệt là 
 - **Ngày 13:** Xây dựng `PostDetailPage` và UI danh sách Comment. Xây dựng **Modal đăng Comment**.
 - **Ngày 14:** Xây dựng `ProfilePage` (Header, Tabs) và logic hiển thị nút hành động.
 
-### 🎯 Giai đoạn 3: Phát Triển Tính Năng Phụ Trợ & Nâng Cao (10 Ngày)
+### Giai đoạn 3: Phát Triển Tính Năng Phụ Trợ & Nâng Cao (10 Ngày)
 
 Mục tiêu: Hoàn thành tất cả các trang UI còn lại, bao gồm các phần phức tạp như Insights.
 
@@ -102,7 +102,7 @@ Mục tiêu: Hoàn thành tất cả các trang UI còn lại, bao gồm các ph
 - **Ngày 22 - 23:** Làm sạch UI của các trang phụ.
 - **Ngày 24:** Xây dựng `EmbedThreadPage` (UI Thread nhỏ gọn và mockup code nhúng).
 
-### 🎯 Giai đoạn 4: Tinh Chỉnh, Bảo trì và Hoàn thiện (2 Ngày)
+### Giai đoạn 4: Tinh Chỉnh, Bảo trì và Hoàn thiện (2 Ngày)
 
 Mục tiêu: Rà soát, làm sạch và đóng gói dự án.
 
