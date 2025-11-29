@@ -1,6 +1,6 @@
 Truy cập vào link: https://markdownlivepreview.com/ và dán nội dụng bên dưới để xem
 
-# Tài Liệu Dự Án: Lộ Trình Clone Frontend Threads.com
+# Tài Liệu Xây Dựng Dự án Threads Clone UI
 
 ## I. Mục Tiêu Dự Án
 
@@ -13,15 +13,29 @@ Mục tiêu duy nhất là xây dựng giao diện người dùng (Frontend) c�
 - **Dựng dự án:** Vite, React, JavaScript (JS)
 - **Routing:** React Router
 - **Quản lý Form:** React Hook Form
-- **Validation:** Yup
+- **Validation:** Zod
 - **CSS/Styling:** Tailwind CSS
+  - 2 thư viện Tailwind CSS: tailwindcss, @tailwindcss/vite
+  - 1 Extension: Tailwind CSS IntelliSense
+  - 2 thư viện class sorting: prettier, prettier-plugin-tailwindcss
 - **UI Components:** Shadcn
 - **State Management:** Redux Toolkit (RTK)
 - **Data Fetching:** RTK Query (kết hợp với Axios)
 - **HTTP Request:** Axios
 - **Đa ngôn ngữ (i18n):** React i18next
-- **Icon:** Fontawesome, Lucide icons (Shadcn), Hero icons (Tailwind)
+- **Icon:** Fontawesome
 - **Font Family:** `system-ui`
+- **Infinity scroll:** react-infinite-scroll-component
+- **Module alias:** module-alias
+
+## 3. Tính năng core
+
+- Auth: Đăng ký, đăng nhập, quên mật khẩu, reset mật khẩu, đăng nhập với Google
+- Toast mesage
+- Logging error
+- Dịch vụ giám sát lỗi (Sentry)
+- Web server (nginx) ở local để giải quyết CORS và set cookie samesite
+- Deploy
 
 ## III. Phân Tích Cấu Trúc Giao Diện
 
@@ -29,30 +43,49 @@ Mục tiêu duy nhất là xây dựng giao diện người dùng (Frontend) c�
 
 Dự án sử dụng 3 loại layout chính để quản lý các nhóm trang:
 
-- **Default Layout:** Chứa các thành phần chung như Navigation Bar (Sidebar/Footer), nút Thêm bài viết (`Add thread button`). Áp dụng cho hầu hết các trang chức năng.
-- **Auth Layout:** Dành cho các trang đăng nhập/đăng ký, có một Wrapper với `background-image` đặc trưng.
+- **Default Layout:**
+  - NavigationBar
+    - UI
+      - Mobile:
+        - Vị trí (tuyệt đối: sát mép dưới viewport): `fixed left-0 bottom-0 right-0`
+        - Kích thước: `w-19 h-dvh`
+        - Text và các thuộc tính ảnh hưởng tới con của nó: `flex`
+        - Dark mode:
+      - Desktop:
+        - Vị trí (tuyệt đối: sát mép trái viewport): `md:right-auto md:top-0`
+        - Kích thước: `md:w-dvw md:h-[50px]`
+        - Text và các thuộc tính ảnh hưởng tới con của nó: `flex`
+        - Dark mode:
+    - Logic
+  - Button (`Add post button`)
+  - Home
+- **Auth Layout:**
+  - Wrapper với `background-image` đặc trưng.
 - **No Layout:** Dành cho các trang đặc biệt như 404 hoặc trang nhúng (Embed).
 
 ### 2. Cấu Trúc Pages
 
-| Nhóm Layout   | Trang (Pages)         | Tính năng nổi bật                                                                                                    |
-| :------------ | :-------------------- | :------------------------------------------------------------------------------------------------------------------- |
-| **Default**   | Home Page             | Chia thành nhiều Pages (For You, Following) với logic state nội bộ.                                                  |
-|               | For You Page          | Danh sách bài viết (Thread List) và Modal đăng bài viết.                                                             |
-|               | Post Detail Page      | Chi tiết bài viết và danh sách comment. Modal đăng comment.                                                          |
-|               | Following Page        | Danh sách bài viết từ những người dùng đã theo dõi.                                                                  |
-|               | Ghost Thread Page     | Danh sách bài viết đã lưu trữ quá 24h.                                                                               |
-|               | Search Page           | Input tìm kiếm _on-change_, Filter, Gợi ý theo dõi.                                                                  |
-|               | Activity Page         | Danh sách các hoạt động gợi ý.                                                                                       |
-|               | Profile Page          | Thông tin User, hiển thị các nút hành động nếu là User chính.                                                        |
-|               | Insight Page          | Hiển thị Card và Chart (dùng Shadcn) cho các chỉ số (views, tương tác, người theo dõi theo địa lý, tuổi, giới tính). |
-|               | Setting Page          | Dùng Shadcn Sidebar, chứa 4 mục cài đặt.                                                                             |
-|               | Saved Page            | Danh sách bài viết đã lưu.                                                                                           |
-| **Auth**      | Login Page            | Form (RHF) với 2 trường, link "Quên mật khẩu", nút Đăng ký bằng Instagram.                                           |
-|               | Register Page         | Trang đăng ký (nếu API có).                                                                                          |
-|               | Forgot/Reset Password | Trang quên/đặt lại mật khẩu (nếu API có).                                                                            |
-| **No Layout** | Not Found Page (404)  | Hiển thị thông báo và nút "Back".                                                                                    |
-|               | Embed Thread Page     | Xuất khối code HTML và thẻ script logic nhúng iframe chứa Thread.                                                    |
+- **Default Layout**
+  - Home Page: Chia thành nhiều Pages (For You, Following) với logic state nội bộ.
+  - For You Page: Danh sách bài viết (Thread List) và Modal đăng bài viết.
+  - Post Detail Page: Chi tiết bài viết và danh sách comment. Modal đăng comment.
+  - Following Page: Danh sách bài viết từ những người dùng đã theo dõi.
+  - Ghost Thread Page: Danh sách bài viết đã lưu trữ quá 24h.
+  - Search Page: Input tìm kiếm _on-change_, Filter, Gợi ý theo dõi.
+  - Activity Page: Danh sách các hoạt động gợi ý.
+  - Profile Page: Thông tin User, hiển thị các nút hành động nếu là User chính.
+  - Insight Page: Hiển thị Card và Chart (dùng Shadcn) cho các chỉ số (views, tương tác, người theo dõi theo địa lý, tuổi, giới tính).
+  - Setting Page: Dùng Shadcn Sidebar, chứa 4 mục cài đặt.
+  - Saved Page: Danh sách bài viết đã lưu.
+
+- **Auth Layout**
+  - Login Page: Form (RHF) với 2 trường, link "Quên mật khẩu", nút Đăng ký bằng Instagram.
+  - Register Page: Trang đăng ký (nếu API có).
+  - Forgot/Reset Password: Trang quên/đặt lại mật khẩu (nếu API có).
+
+- **No Layout**
+  - Not Found Page (404): Hiển thị thông báo và nút "Back".
+  - Embed Thread Page: Xuất khối code HTML và thẻ script logic nhúng iframe chứa Thread.
 
 ## IV. Lộ Trình Dự Án Chi Tiết (26 Ngày)
 
